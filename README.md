@@ -47,6 +47,9 @@
 ---
 
 ## 1. Project Overview
+ <br>
+<img width="1913" height="1047" alt="g" src="https://github.com/user-attachments/assets/0a979bed-7a10-4c65-8980-9cb0d454344e" /> <br> <br>
+
 
 **CERBERUS GRAVITY** is a modular research platform that constructs **risk-weighted attack graphs** and quantifies how high-value, highly privileged, and highly reachable assets pull attack paths toward them — analogous to gravitational attraction.
 
