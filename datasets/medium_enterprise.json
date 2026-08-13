@@ -1,0 +1,512 @@
+{
+  "name": "Medium Enterprise Lab",
+  "description": "Synthetic mid-size enterprise for CERBERUS research. All data fictional.",
+  "version": "1.0",
+  "assets": [
+    {
+      "id": "inet-01",
+      "name": "Internet Edge",
+      "type": "network",
+      "ip": "0.0.0.0",
+      "hostname": "edge",
+      "criticality": 15,
+      "privilege_level": 5,
+      "reachability": 100,
+      "exposure": 100,
+      "trust_level": 5,
+      "business_value": 10
+    },
+    {
+      "id": "dmz-01",
+      "name": "Web Portal",
+      "type": "server",
+      "ip": "10.0.1.11",
+      "hostname": "dmz1.corp.lab",
+      "criticality": 50,
+      "privilege_level": 38,
+      "reachability": 75,
+      "exposure": 70,
+      "trust_level": 35,
+      "business_value": 55
+    },
+    {
+      "id": "dmz-02",
+      "name": "API Gateway",
+      "type": "server",
+      "ip": "10.0.1.12",
+      "hostname": "dmz2.corp.lab",
+      "criticality": 55,
+      "privilege_level": 41,
+      "reachability": 70,
+      "exposure": 65,
+      "trust_level": 35,
+      "business_value": 60
+    },
+    {
+      "id": "dmz-03",
+      "name": "Mail Gateway",
+      "type": "server",
+      "ip": "10.0.1.13",
+      "hostname": "dmz3.corp.lab",
+      "criticality": 60,
+      "privilege_level": 44,
+      "reachability": 65,
+      "exposure": 60,
+      "trust_level": 35,
+      "business_value": 65
+    },
+    {
+      "id": "dmz-04",
+      "name": "VPN Concentrator",
+      "type": "server",
+      "ip": "10.0.1.14",
+      "hostname": "dmz4.corp.lab",
+      "criticality": 65,
+      "privilege_level": 47,
+      "reachability": 60,
+      "exposure": 55,
+      "trust_level": 35,
+      "business_value": 70
+    },
+    {
+      "id": "app-01",
+      "name": "App Cluster A",
+      "type": "server",
+      "ip": "10.0.2.21",
+      "hostname": "app1.corp.lab",
+      "criticality": 60,
+      "privilege_level": 55,
+      "reachability": 50,
+      "exposure": 40,
+      "trust_level": 55,
+      "business_value": 65
+    },
+    {
+      "id": "app-02",
+      "name": "App Cluster B",
+      "type": "server",
+      "ip": "10.0.2.22",
+      "hostname": "app2.corp.lab",
+      "criticality": 65,
+      "privilege_level": 60,
+      "reachability": 50,
+      "exposure": 40,
+      "trust_level": 55,
+      "business_value": 70
+    },
+    {
+      "id": "app-03",
+      "name": "CI/CD Runner",
+      "type": "server",
+      "ip": "10.0.2.23",
+      "hostname": "app3.corp.lab",
+      "criticality": 70,
+      "privilege_level": 65,
+      "reachability": 50,
+      "exposure": 40,
+      "trust_level": 55,
+      "business_value": 75
+    },
+    {
+      "id": "app-04",
+      "name": "Internal Wiki",
+      "type": "server",
+      "ip": "10.0.2.24",
+      "hostname": "app4.corp.lab",
+      "criticality": 75,
+      "privilege_level": 70,
+      "reachability": 50,
+      "exposure": 40,
+      "trust_level": 55,
+      "business_value": 80
+    },
+    {
+      "id": "data-01",
+      "name": "Customer DB",
+      "type": "database",
+      "ip": "10.0.3.31",
+      "hostname": "data1.corp.lab",
+      "criticality": 88,
+      "privilege_level": 78,
+      "reachability": 25,
+      "exposure": 15,
+      "trust_level": 80,
+      "business_value": 92
+    },
+    {
+      "id": "data-02",
+      "name": "Analytics Warehouse",
+      "type": "database",
+      "ip": "10.0.3.32",
+      "hostname": "data2.corp.lab",
+      "criticality": 91,
+      "privilege_level": 81,
+      "reachability": 25,
+      "exposure": 15,
+      "trust_level": 80,
+      "business_value": 94
+    },
+    {
+      "id": "data-03",
+      "name": "Secrets Vault",
+      "type": "server",
+      "ip": "10.0.3.33",
+      "hostname": "data3.corp.lab",
+      "criticality": 94,
+      "privilege_level": 84,
+      "reachability": 25,
+      "exposure": 15,
+      "trust_level": 80,
+      "business_value": 96
+    },
+    {
+      "id": "data-04",
+      "name": "Backup Server",
+      "type": "server",
+      "ip": "10.0.3.34",
+      "hostname": "data4.corp.lab",
+      "criticality": 97,
+      "privilege_level": 87,
+      "reachability": 25,
+      "exposure": 15,
+      "trust_level": 80,
+      "business_value": 98
+    },
+    {
+      "id": "ws-01",
+      "name": "Dev Workstation",
+      "type": "workstation",
+      "ip": "10.0.4.40",
+      "hostname": "ws-dev.corp.lab",
+      "criticality": 25,
+      "privilege_level": 30,
+      "reachability": 65,
+      "exposure": 50,
+      "trust_level": 40,
+      "business_value": 20
+    },
+    {
+      "id": "ws-02",
+      "name": "Admin Workstation",
+      "type": "workstation",
+      "ip": "10.0.4.41",
+      "hostname": "ws-admin.corp.lab",
+      "criticality": 40,
+      "privilege_level": 55,
+      "reachability": 60,
+      "exposure": 45,
+      "trust_level": 50,
+      "business_value": 35
+    },
+    {
+      "id": "id-admin",
+      "name": "Domain Admin",
+      "type": "identity",
+      "ip": null,
+      "hostname": null,
+      "criticality": 95,
+      "privilege_level": 98,
+      "reachability": 30,
+      "exposure": 20,
+      "trust_level": 90,
+      "business_value": 95
+    },
+    {
+      "id": "id-svc",
+      "name": "Service Account (Deploy)",
+      "type": "identity",
+      "ip": null,
+      "hostname": null,
+      "criticality": 70,
+      "privilege_level": 75,
+      "reachability": 40,
+      "exposure": 35,
+      "trust_level": 60,
+      "business_value": 55
+    },
+    {
+      "id": "crit-01",
+      "name": "Crown Jewel ERP",
+      "type": "server",
+      "ip": "10.0.5.50",
+      "hostname": "erp.corp.lab",
+      "criticality": 99,
+      "privilege_level": 92,
+      "reachability": 20,
+      "exposure": 10,
+      "trust_level": 85,
+      "business_value": 99
+    },
+    {
+      "id": "jump-01",
+      "name": "Privileged Jump Host",
+      "type": "server",
+      "ip": "10.0.2.99",
+      "hostname": "jump.corp.lab",
+      "criticality": 80,
+      "privilege_level": 85,
+      "reachability": 45,
+      "exposure": 30,
+      "trust_level": 70,
+      "business_value": 70
+    }
+  ],
+  "identities": [
+    {
+      "id": "user-dev",
+      "username": "dev.user",
+      "role": "developer",
+      "privilege": 30,
+      "groups": [
+        "dev"
+      ],
+      "trust_relationships": {}
+    },
+    {
+      "id": "user-admin",
+      "username": "ops.admin",
+      "role": "admin",
+      "privilege": 90,
+      "groups": [
+        "domain-admins"
+      ],
+      "trust_relationships": {}
+    }
+  ],
+  "relationships": [
+    {
+      "source": "inet-01",
+      "target": "dmz-01",
+      "relationship_type": "access",
+      "trust": 20.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "inet-01",
+      "target": "dmz-02",
+      "relationship_type": "access",
+      "trust": 25.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "inet-01",
+      "target": "dmz-03",
+      "relationship_type": "access",
+      "trust": 30.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "inet-01",
+      "target": "dmz-04",
+      "relationship_type": "access",
+      "trust": 35.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "dmz-01",
+      "target": "app-01",
+      "relationship_type": "dependency",
+      "trust": 65.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "dmz-02",
+      "target": "app-01",
+      "relationship_type": "dependency",
+      "trust": 70.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "dmz-02",
+      "target": "app-02",
+      "relationship_type": "dependency",
+      "trust": 70.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "app-01",
+      "target": "data-01",
+      "relationship_type": "access",
+      "trust": 75.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "app-02",
+      "target": "data-02",
+      "relationship_type": "access",
+      "trust": 70.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "app-03",
+      "target": "id-svc",
+      "relationship_type": "privilege_escalation",
+      "trust": 55.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "id-svc",
+      "target": "app-03",
+      "relationship_type": "admin_access",
+      "trust": 80.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "id-svc",
+      "target": "data-03",
+      "relationship_type": "access",
+      "trust": 70.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "ws-01",
+      "target": "app-01",
+      "relationship_type": "access",
+      "trust": 50.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "ws-01",
+      "target": "app-04",
+      "relationship_type": "access",
+      "trust": 45.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "ws-02",
+      "target": "jump-01",
+      "relationship_type": "access",
+      "trust": 60.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "ws-02",
+      "target": "id-admin",
+      "relationship_type": "privilege_escalation",
+      "trust": 40.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "id-admin",
+      "target": "jump-01",
+      "relationship_type": "admin_access",
+      "trust": 90.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "id-admin",
+      "target": "crit-01",
+      "relationship_type": "admin_access",
+      "trust": 95.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "id-admin",
+      "target": "data-01",
+      "relationship_type": "admin_access",
+      "trust": 90.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "id-admin",
+      "target": "data-03",
+      "relationship_type": "admin_access",
+      "trust": 95.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "jump-01",
+      "target": "crit-01",
+      "relationship_type": "access",
+      "trust": 80.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "jump-01",
+      "target": "data-04",
+      "relationship_type": "access",
+      "trust": 70.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "dmz-03",
+      "target": "ws-01",
+      "relationship_type": "communication",
+      "trust": 40.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "app-04",
+      "target": "data-01",
+      "relationship_type": "dependency",
+      "trust": 55.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "data-04",
+      "target": "data-01",
+      "relationship_type": "dependency",
+      "trust": 60.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    },
+    {
+      "source": "app-03",
+      "target": "app-01",
+      "relationship_type": "dependency",
+      "trust": 50.0,
+      "permission": "access",
+      "distance": 1.0,
+      "confidence": 0.85
+    }
+  ]
+}

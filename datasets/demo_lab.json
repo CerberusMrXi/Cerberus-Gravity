@@ -1,0 +1,171 @@
+{
+  "name": "CERBERUS Demo Lab",
+  "description": "Synthetic enterprise environment for demonstration. All data is fictional.",
+  "version": "1.0",
+  "assets": [
+    {
+      "id": "inet-01",
+      "name": "Internet Edge",
+      "type": "network",
+      "ip": "0.0.0.0",
+      "hostname": "internet",
+      "criticality": 20.0,
+      "privilege_level": 10.0,
+      "reachability": 100.0,
+      "exposure": 100.0,
+      "trust_level": 10.0,
+      "business_value": 15.0
+    },
+    {
+      "id": "web-01",
+      "name": "Web Server (DMZ)",
+      "type": "server",
+      "ip": "10.0.1.10",
+      "hostname": "web01.demo.lab",
+      "criticality": 55.0,
+      "privilege_level": 40.0,
+      "reachability": 85.0,
+      "exposure": 80.0,
+      "trust_level": 40.0,
+      "business_value": 60.0
+    },
+    {
+      "id": "app-01",
+      "name": "Application Server",
+      "type": "server",
+      "ip": "10.0.2.20",
+      "hostname": "app01.demo.lab",
+      "criticality": 70.0,
+      "privilege_level": 55.0,
+      "reachability": 60.0,
+      "exposure": 45.0,
+      "trust_level": 55.0,
+      "business_value": 75.0
+    },
+    {
+      "id": "db-01",
+      "name": "Customer Database",
+      "type": "database",
+      "ip": "10.0.3.30",
+      "hostname": "db01.demo.lab",
+      "criticality": 95.0,
+      "privilege_level": 80.0,
+      "reachability": 35.0,
+      "exposure": 25.0,
+      "trust_level": 70.0,
+      "business_value": 98.0
+    },
+    {
+      "id": "ws-01",
+      "name": "User Workstation",
+      "type": "workstation",
+      "ip": "10.0.4.40",
+      "hostname": "ws-user01.demo.lab",
+      "criticality": 30.0,
+      "privilege_level": 25.0,
+      "reachability": 70.0,
+      "exposure": 55.0,
+      "trust_level": 45.0,
+      "business_value": 25.0
+    },
+    {
+      "id": "id-admin",
+      "name": "Domain Admin Identity",
+      "type": "identity",
+      "ip": null,
+      "hostname": null,
+      "criticality": 90.0,
+      "privilege_level": 95.0,
+      "reachability": 40.0,
+      "exposure": 30.0,
+      "trust_level": 85.0,
+      "business_value": 90.0
+    },
+    {
+      "id": "crit-01",
+      "name": "Critical Internal Server",
+      "type": "server",
+      "ip": "10.0.5.50",
+      "hostname": "crit01.demo.lab",
+      "criticality": 98.0,
+      "privilege_level": 90.0,
+      "reachability": 25.0,
+      "exposure": 15.0,
+      "trust_level": 80.0,
+      "business_value": 99.0
+    },
+    {
+      "id": "mail-01",
+      "name": "Mail Gateway",
+      "type": "server",
+      "ip": "10.0.1.15",
+      "hostname": "mail01.demo.lab",
+      "criticality": 50.0,
+      "privilege_level": 45.0,
+      "reachability": 75.0,
+      "exposure": 70.0,
+      "trust_level": 50.0,
+      "business_value": 55.0
+    },
+    {
+      "id": "file-01",
+      "name": "File Server",
+      "type": "server",
+      "ip": "10.0.3.35",
+      "hostname": "file01.demo.lab",
+      "criticality": 65.0,
+      "privilege_level": 50.0,
+      "reachability": 45.0,
+      "exposure": 35.0,
+      "trust_level": 60.0,
+      "business_value": 70.0
+    },
+    {
+      "id": "jump-01",
+      "name": "Jump Host",
+      "type": "server",
+      "ip": "10.0.2.25",
+      "hostname": "jump01.demo.lab",
+      "criticality": 75.0,
+      "privilege_level": 70.0,
+      "reachability": 50.0,
+      "exposure": 40.0,
+      "trust_level": 65.0,
+      "business_value": 65.0
+    }
+  ],
+  "identities": [
+    {
+      "id": "user-alice",
+      "username": "alice.demo",
+      "role": "developer",
+      "privilege": 35.0,
+      "groups": ["dev", "users"],
+      "trust_relationships": {}
+    },
+    {
+      "id": "user-bob",
+      "username": "bob.admin",
+      "role": "sysadmin",
+      "privilege": 85.0,
+      "groups": ["admins", "domain-admins"],
+      "trust_relationships": {}
+    }
+  ],
+  "relationships": [
+    {"source": "inet-01", "target": "web-01", "relationship_type": "access", "trust": 20.0, "permission": "http", "distance": 1.0, "confidence": 0.95},
+    {"source": "inet-01", "target": "mail-01", "relationship_type": "access", "trust": 25.0, "permission": "smtp", "distance": 1.0, "confidence": 0.9},
+    {"source": "web-01", "target": "app-01", "relationship_type": "dependency", "trust": 70.0, "permission": "api", "distance": 1.0, "confidence": 0.9},
+    {"source": "app-01", "target": "db-01", "relationship_type": "access", "trust": 75.0, "permission": "db-readwrite", "distance": 1.0, "confidence": 0.85},
+    {"source": "app-01", "target": "file-01", "relationship_type": "access", "trust": 60.0, "permission": "file", "distance": 1.0, "confidence": 0.8},
+    {"source": "ws-01", "target": "app-01", "relationship_type": "access", "trust": 50.0, "permission": "https", "distance": 1.0, "confidence": 0.85},
+    {"source": "ws-01", "target": "id-admin", "relationship_type": "privilege_escalation", "trust": 40.0, "permission": "auth", "distance": 1.5, "confidence": 0.7},
+    {"source": "id-admin", "target": "crit-01", "relationship_type": "admin_access", "trust": 90.0, "permission": "full", "distance": 1.0, "confidence": 0.95},
+    {"source": "id-admin", "target": "db-01", "relationship_type": "admin_access", "trust": 85.0, "permission": "full", "distance": 1.0, "confidence": 0.9},
+    {"source": "id-admin", "target": "jump-01", "relationship_type": "admin_access", "trust": 80.0, "permission": "ssh", "distance": 1.0, "confidence": 0.9},
+    {"source": "jump-01", "target": "crit-01", "relationship_type": "access", "trust": 75.0, "permission": "ssh", "distance": 1.0, "confidence": 0.85},
+    {"source": "mail-01", "target": "ws-01", "relationship_type": "communication", "trust": 45.0, "permission": "email", "distance": 1.0, "confidence": 0.75},
+    {"source": "web-01", "target": "ws-01", "relationship_type": "communication", "trust": 30.0, "permission": "http", "distance": 1.2, "confidence": 0.7},
+    {"source": "file-01", "target": "db-01", "relationship_type": "dependency", "trust": 55.0, "permission": "sync", "distance": 1.0, "confidence": 0.8}
+  ]
+}
